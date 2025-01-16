@@ -1039,3 +1039,49 @@ console.log("Initialized snake and tiles:", g.currentState && g.currentState.sna
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="score">0</div>
+  <div class="stage"></div>
+
+  <!-- Управление кнопками -->
+  <div class="controls">
+    <button class="control-btn" id="up">▲</button>
+    <div class="horizontal-controls">
+      <button class="control-btn" id="left">◀</button>
+      <button class="control-btn" id="down">▼</button>
+      <button class="control-btn" id="right">▶</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Подключение кнопок управления
+    const upButton = document.getElementById('up');
+    const downButton = document.getElementById('down');
+    const leftButton = document.getElementById('left');
+    const rightButton = document.getElementById('right');
+
+    // Имитация нажатия клавиш клавиатуры при нажатии кнопок
+    upButton.addEventListener('click', () => {
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp' }));
+    });
+    downButton.addEventListener('click', () => {
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowDown' }));
+    });
+    leftButton.addEventListener('click', () => {
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowLeft' }));
+    });
+    rightButton.addEventListener('click', () => {
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowRight' }));
+    });
+  </script>
+</body>
+</html>
